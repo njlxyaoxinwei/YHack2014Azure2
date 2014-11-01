@@ -2,7 +2,7 @@ function insert(item, user, request) {
     request.execute();
     // Set timeout to delay the notification, to provide time for the
     // app to be closed on the device to demonstrate toast notifications
-    push.apns.send(item.deviceToken, {
+    push.apns.send(null, {
         alert: "Toast: " + item.content,
         payload: {
             inAppMessage: "Hey, a new item arrived: '" + item.sender + "'"
