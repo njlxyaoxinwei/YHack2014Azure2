@@ -2,7 +2,7 @@
   "routes": {
     "/": {
       "insert": {
-        "permission": "user"
+        "permission": "public"
       },
       "read": {
         "permission": "user"
