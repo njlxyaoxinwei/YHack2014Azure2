@@ -7,7 +7,7 @@ function insert(item, user, request) {
         push.apns.send(item.deviceToken, {
             alert: "Toast: " + item.text,
             payload: {
-                inAppMessage: "Hey, a new item arrived: '" + item.text + "'"
+                "inAppMessage": "Hey, a new item arrived: '" + item.text + "'"
             }
         });
     }, 2500);
