@@ -10,6 +10,6 @@ function insert(item, user, request) {
             payload: {
                 "inAppMessage": "Hey, a new item arrived: '" + item.text + "'"
             }
-        }, console.log);
+        }, function(error) {console.log(error);} );
     }, 2500);
 }
