@@ -11,8 +11,7 @@ function insert(item, user, request) {
 					entry.order = index + 1;
 					entry.message_id = item.id;
 				});
-				batchInsert(codeTable, components, components.length, 10);
-		   		request.respond();
+				batchInsert(codeTable, components, components.length, 10, request.respond);
 	    	}
 	    });		
 	} else {

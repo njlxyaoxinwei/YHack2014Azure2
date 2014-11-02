@@ -1,4 +1,4 @@
-exports.batchInsert = function(table, records, nRecords, batchSize) {
+exports.batchInsert = function(table, records, nRecords, batchSize, done) {
 	var totalCount = 0;
 	var errorCount = 0;
 
@@ -14,7 +14,8 @@ exports.batchInsert = function(table, records, nRecords, batchSize) {
                     insertItems(); 
                 } else { 
                     // or we are done, report the status of the job 
-                    // to the log and don't do any more processing 
+                    // to the log and don't do any more processing  
+                    done();
                     console.log("Insert complete. %d Records processed. There were %d errors.", totalCount, errorCount); 
                 } 
             } 
