@@ -5,7 +5,7 @@ function insert(item, user, request) {
     // app to be closed on the device to demonstrate toast notifications
     setTimeout(function() {
         console.log(typeof item.deviceToken);
-        push.apns.send("2279234231518685460-4495073833836080936-12", {
+        push.apns.send("uniqueTag", {
             alert: "Toast: " + item.text,
             payload: {
                 inAppMessage: "You've been equation-ized! " //+ item.text + "'"
