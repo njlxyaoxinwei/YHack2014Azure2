@@ -20,6 +20,7 @@ function insert(item, user, request) {
 }
 
 var do_push = function(request, push, recipient) {
+	console.log("recipient = " + recipient);
 	return function(){
 		push.apns.send(recipient, {
 			alert: "Toast: You have a new LaTeX message",
