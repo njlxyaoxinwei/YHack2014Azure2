@@ -16,6 +16,6 @@ function insert(item, user, request) {
 	    	}
 	    });		
 	} else {
-		request.respond(new Error("invalid content"));
+		request.respond(419, {error: "Invalid syntax"});
 	}
 }
