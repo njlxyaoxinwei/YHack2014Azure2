@@ -1,5 +1,5 @@
 function insert(item, user, request) {
-    var t=0;
+    console.log("user is %j", user);
     request.execute();
 
 }
