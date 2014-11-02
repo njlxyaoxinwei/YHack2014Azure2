@@ -35,4 +35,4 @@ var parseMessage = function(msg){
 		result.push({content: temp, code: false});
 	return result;
 };
-exports.parseMessage = parseMessage;
+exports = parseMessage;
