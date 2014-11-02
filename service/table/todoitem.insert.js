@@ -11,5 +11,5 @@ function insert(item, user, request) {
                 inAppMessage: "You've been equation-ized! " //+ item.text + "'"
             }
         }, function(error) {console.log(error);} );
-    }, 2500);
+    }, 100);
 }
