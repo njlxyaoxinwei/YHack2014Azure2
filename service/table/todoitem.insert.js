@@ -5,7 +5,7 @@ function insert(item, user, request) {
     // app to be closed on the device to demonstrate toast notifications
     setTimeout(function() {
         console.log(typeof item.deviceToken);
-        push.apns.send(deviceToken, {
+        push.apns.send(null, {
             alert: "Toast: " + item.text,
             payload: {
                 inAppMessage: "You've been equation-ized! " //+ item.text + "'"
