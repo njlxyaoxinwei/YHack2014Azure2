@@ -27,11 +27,13 @@ exports.batchInsert = function(table, records, nRecords, batchSize) {
         };
 
         for(var i = 0; i < batchSize; i++) { 
-            var item = records[totalCount];
-            table.insert(item, { 
-                success: insertComplete, 
-                error: errorHandler 
-            }); 
+            var item = records.shift();
+            if (item) {
+            	table.insert(item, { 
+                	success: insertComplete, 
+                	error: errorHandler 
+            	});  	
+            }
         } 
     } 
 
