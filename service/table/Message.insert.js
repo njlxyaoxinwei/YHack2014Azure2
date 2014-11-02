@@ -1,6 +1,7 @@
 function insert(item, user, request) {
     item.sender = user.userId;
-	var parser = require("../shared/parseMsg.js");
+	var parser = require("../shared/parseMsg").parser;
+	console.log(parser);
     request.execute({
     	success: function() {
 		    var codeTable = tables.getTable('code');
@@ -9,7 +10,7 @@ function insert(item, user, request) {
 				entry.order = index + 1;
 				entry.message_id = item.id;
 			});
-    		console.log("%j",components);
+    		console.log(components);
     		request.respond();
     	}
     });

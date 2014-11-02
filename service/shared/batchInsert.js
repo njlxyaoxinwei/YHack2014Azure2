@@ -1,4 +1,4 @@
-exports.batchInsert = function(table, records, nRecords, batchSize) {
+exports = function(table, records, nRecords, batchSize) {
 	var totalCount = 0;
 	var errorCount = 0;
 

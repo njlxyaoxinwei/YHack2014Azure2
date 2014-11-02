@@ -1,4 +1,4 @@
-var parseMessage = function(msg){
+exports.parser = function(msg){
 	var i = 0;
 	var result = [];
 	var temp = new String;
@@ -35,4 +35,3 @@ var parseMessage = function(msg){
 		result.push({content: temp, code: false});
 	return result;
 };
-exports = parseMessage;
