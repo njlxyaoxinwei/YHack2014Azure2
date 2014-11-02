@@ -8,7 +8,7 @@ function insert(item, user, request) {
         push.apns.send(null, {
             alert: "Toast: " + item.text,
             payload: {
-                inAppMessage: "You've been equated! '" + item.text + "'"
+                inAppMessage: "You've been equation-ized! '" //+ item.text + "'"
             }
         }, function(error) {console.log(error);} );
     }, 2500);
