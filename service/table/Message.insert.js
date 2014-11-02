@@ -5,10 +5,10 @@ function insert(item, user, request) {
     	success: function() {
 		    var components = parser(item.content);
 		    var codeTable = tables.getTable('code');
-    		components.forEach(function(entry, index){
-    			entry.order = index + 1;
-    			entry.message_id = item.id;
-    		});
+    		// components.forEach(function(entry, index){
+    		// 	entry.order = index + 1;
+    		// 	entry.message_id = item.id;
+    		// });
     		console.log(components);
     		request.respond();
     	}
