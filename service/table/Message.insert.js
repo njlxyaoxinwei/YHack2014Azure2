@@ -11,10 +11,22 @@ function insert(item, user, request) {
 					entry.order = index + 1;
 					entry.message_id = item.id;
 				});
-				batchInsert(codeTable, components, components.length, 10, request.respond);
+				batchInsert(codeTable, components, components.length, 10, do_push(request, push, item.recipient));
 	    	}
 	    });		
 	} else {
 		request.respond(419, {error: "Invalid syntax"});
 	}
 }
+
+var do_push = function(request, push, recipient) {
+	return function(){
+		push.apns.send(recipient, {
+			alert: "Toast: You have a new LaTeX message",
+			payload: {
+				inAppMessage: "You've been equation-ized!"
+			}
+		}, function(err){console.log(err)});
+		request.respond();		
+	}
+};
